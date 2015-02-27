@@ -28,9 +28,7 @@ The installation requires Linux with `apt-get`.
 Note: In order to run the GPU version of DQN, you should additionally have the
 NVIDIA® CUDA® (version 5.5 or later) toolkit installed prior to the Torch
 installation below.
-This can be downloaded from [https://developer.nvidia.com/cuda-toolkit
-and](https://developer.nvidia.com/cuda-toolkit
-and) installation instructions can be found in
+This can be downloaded from [https://developer.nvidia.com/cuda-toolkit](https://developer.nvidia.com/cuda-toolkit) and installation instructions can be found in
 [http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux](http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux)
 
 
