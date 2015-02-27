@@ -96,7 +96,7 @@ function nql:__init(args)
     end
 
     -- Load preprocessing network.
-    if not (type(self.preproc == 'string')) then
+    if not (type(self.preproc) == 'string') then
         error('The preprocessing is not a string')
     end
     msg, err = pcall(require, self.preproc)
