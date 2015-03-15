@@ -39,6 +39,7 @@ cmd:option('-save_versions', 0, '')
 cmd:option('-steps', 10^5, 'number of training steps to perform')
 cmd:option('-eval_steps', 10^5, 'number of evaluation steps')
 
+cmd:option('-render', false, 'renders game screen to a window')
 cmd:option('-verbose', 2,
            'the higher the level, the more information is printed to screen')
 cmd:option('-threads', 1, 'number of BLAS threads')
@@ -78,6 +79,7 @@ local episode_reward
 local screen, reward, terminal = game_env:getState()
 
 print("Iteration ..", step)
+local window = nil
 while step < opt.steps do
     step = step + 1
     local action_index = agent:perceive(reward, screen, terminal)
@@ -91,6 +93,11 @@ while step < opt.steps do
         else
             screen, reward, terminal = game_env:newGame()
         end
+    end
+
+    -- render game to screen
+    if opt.render then
+        window = image.display({image=screen, win=window})
     end
 
     if step % opt.prog_freq == 0 then
